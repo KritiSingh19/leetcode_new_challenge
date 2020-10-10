@@ -11,15 +11,15 @@ At the end, return the modified image
 
 
 class Solution:
-    def floodFill(self, image: List[List[int]], sr: int, sc: int, newColor: int) -> List[List[int]]:
+    def floodFill(self, image: List[List[int]], sr: int, sc: int, newColour: int) -> List[List[int]]:
         rows , cols = len(image) , len(image[0])
         directions = [(1 , 0) , (-1 , 0) , (0 , 1) , (0 , -1)]
         def fillColor(x , y , old_color):
             if image[x][y] != old_color:
                 return 
-            if image[x][y] == newColor:
+            if image[x][y] == newColour:
                 return
-            image[x][y] = newColor
+            image[x][y] = newColour
             for dx , dy in directions:
                 nx , ny = x + dx , y + dy
                 if 0 <= nx < rows and 0 <= ny < cols:
